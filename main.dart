@@ -1,6 +1,7 @@
 import 'dart:io';
 import 'dart:math';
 
+//
 Map<String, int> rankMap = {
   '2': 2,
   '3': 3,
@@ -19,8 +20,6 @@ Map<String, int> rankMap = {
 
 void main() {
   // BlackJack:
-  // Ich werde keine Klasssen verwenden!
-  // Allerdings werde ich Funktionen verwenden!
   bool isGame = true;
   while (isGame) {
     isGame = Game();
@@ -169,9 +168,7 @@ int EvalPlayingCard(String actor, List<String> cards, List<int> asses) {
   bool isLost = false;
 
   if (pointsSum > 21) {
-    if (asses[0] == 0) {
-      isLost = true;
-    } else {
+    if (asses[0] != 0) {
       pointsSum -= 10;
       asses[0]--;
     }
@@ -188,12 +185,7 @@ bool IsBlackJack(List<String> cards, int pointsSum) {
 }
 
 void clearTerminal() {
-  print('');
-  print('');
-  print('');
-  print('');
-  print('');
-  print('');
-  print('');
-  print('');
+  for (int i = 0; i < 10; i++) {
+    print('');
+  }
 }
